@@ -11,6 +11,7 @@ dependencies = [
     "httpx2>=2.5.0",
     "pydantic>=2.13.4",
     "pyyaml>=6.0.3",
+    "whenever>=0.10.2",
 ]
 # https://packaging.python.org/en/latest/specifications/license-expression/#specification
 license = "MIT"

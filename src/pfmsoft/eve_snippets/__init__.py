@@ -13,8 +13,18 @@ __release__ = __version__
 __url__ = "https://github.com/DonalChilde/pfmsoft-eve-snippets"
 __license__ = "MIT"
 
+from pfmsoft.eve_snippets.eve import eve_dates
 from pfmsoft.eve_snippets.files.save_text_file import save_text_file
+from pfmsoft.eve_snippets.httpx2 import http_session_factory
 from pfmsoft.eve_snippets.markdown import markdown_table
 from pfmsoft.eve_snippets.pydantic import json_io
+from pfmsoft.eve_snippets.yaml import yaml_io
 
-__all__ = ["json_io", "markdown_table", "save_text_file"]
+__all__ = [
+    "json_io",
+    "markdown_table",
+    "save_text_file",
+    "yaml_io",
+    "http_session_factory",
+    "eve_dates",
+]
