@@ -1,11 +1,9 @@
 [project]
 name = "pfmsoft-eve-snippets"
 version = "0.1.3"
-description = "Add your description here"
+description = "Python code snippets for working with the Eve Online API."
 readme = "README.md"
-authors = [
-    { name = "Chad Lowe", email = "pfmsoft.dev@gmail.com" }
-]
+authors = [{ name = "Chad Lowe", email = "pfmsoft.dev@gmail.com" }]
 requires-python = ">=3.14"
 dependencies = [
     "httpx2>=2.5.0",
@@ -28,6 +26,7 @@ Source = "https://github.com/DonalChilde/pfmsoft-eve-snippets"
 requires = ["uv_build>=0.11.23,<0.12.0"]
 build-backend = "uv_build"
 
+# For a namespaced project
 [tool.uv.build-backend]
 module-name = "pfmsoft.eve_snippets"
 
@@ -35,11 +34,7 @@ module-name = "pfmsoft.eve_snippets"
 exclude-newer = "1 week"
 
 [dependency-groups]
-dev = [
-    "pytest>=9.1.1",
-    "pytest-cov>=7.1.0",
-    "ruff>=0.15.21",
-]
+dev = ["pytest>=9.1.1", "pytest-cov>=7.1.0", "ruff>=0.15.21"]
 
 [tool.pytest.ini_options]
 pythonpath = "src"
