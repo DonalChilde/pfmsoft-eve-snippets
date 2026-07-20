@@ -34,7 +34,12 @@ module-name = "pfmsoft.eve_snippets"
 exclude-newer = "1 week"
 
 [dependency-groups]
-dev = ["pytest>=9.1.1", "pytest-cov>=7.1.0", "ruff>=0.15.21"]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.21",
+    "zensical>=0.0.50",
+]
 
 [tool.pytest.ini_options]
 pythonpath = "src"
