@@ -29,6 +29,10 @@ site_author = "Chad Lowe"
 # Read more: https://zensical.org/docs/setup/basics/#site_url
 site_url = "https://DonalChilde.github.io/pfmsoft-eve-snippets/"
 
+# The repo_url is the URL to the source code repository for your project.
+# Read more: https://zensical.org/docs/setup/repository/#repository-url
+repo_url = "https://github.com/DonalChilde/pfmsoft-eve-snippets"
+
 # The copyright notice appears in the page footer and can contain an HTML
 # fragment.
 #
