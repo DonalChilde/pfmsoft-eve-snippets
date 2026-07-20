@@ -1,0 +1,1 @@
+::: pfmsoft.eve_snippets.markdown_table

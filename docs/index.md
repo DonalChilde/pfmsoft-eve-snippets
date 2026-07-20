@@ -18,5 +18,5 @@ source ./.venv/bin/activate
 
 ## Quickstart
 
-This is a library, see the help for the specific modules for usage examples.
+This is a library, see the api help for the specific modules for more details.
 

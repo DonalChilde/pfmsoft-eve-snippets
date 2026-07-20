@@ -17,6 +17,7 @@ from pfmsoft.eve_snippets.files.save_text_file import save_text_file
 from pfmsoft.eve_snippets.httpx2 import http_session_factory
 from pfmsoft.eve_snippets.markdown import markdown_table
 from pfmsoft.eve_snippets.pydantic import json_io
+from pfmsoft.eve_snippets.sqlite3 import connection_helpers
 from pfmsoft.eve_snippets.yaml import yaml_io
 
 __all__ = [
@@ -26,4 +27,5 @@ __all__ = [
     "yaml_io",
     "http_session_factory",
     "eve_dates",
+    "connection_helpers",
 ]
