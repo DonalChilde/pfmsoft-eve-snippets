@@ -21,9 +21,11 @@ jobs:
         uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
         with:
           version: "latest"
+          enable-cache: true
+
       - name: Set up Python
         run: uv python install
-      - run: zensical build --clean
+      - run: uv run zensical build --clean
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
