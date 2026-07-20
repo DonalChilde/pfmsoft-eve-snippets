@@ -1,6 +1,6 @@
 # Eve Snippets
 
-Eve Snippets is a collection of code snippets shared by the pfmsoft family of apps for EVE Online. It is meant to be called by other code.
+Eve Snippets is a collection of code snippets shared by the pfmsoft family of apps for EVE Online.
 
 ## Installation
 
