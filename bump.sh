@@ -56,10 +56,10 @@ if [ "$current_branch" = "HEAD" ]; then
     exit 1
 fi
 
-if [ "$current_branch" != "$RELEASABLE_BRANCH" ]; then
-    echo "Error: bump must be run on branch '$RELEASABLE_BRANCH' (current: '$current_branch')."
-    exit 1
-fi
+# if [ "$current_branch" != "$RELEASABLE_BRANCH" ]; then
+#     echo "Error: bump must be run on branch '$RELEASABLE_BRANCH' (current: '$current_branch')."
+#     exit 1
+# fi
 
 if ! git diff-index --quiet HEAD -- && [ "$FORCE" = false ]; then
     echo "Error: git is not clean. Please commit all changes first."
@@ -88,9 +88,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     git add pyproject.toml uv.lock
     git commit -m "bump version to $new_version"
-    git push origin "$RELEASABLE_BRANCH"
+    git push origin "$current_branch"
 
-    echo "Bumped to $new_version and pushed branch '$RELEASABLE_BRANCH'."
+    echo "Bumped to $new_version and pushed branch '$current_branch'."
 else
     echo "Aborted."
     exit 1
