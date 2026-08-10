@@ -13,7 +13,7 @@ class TimestampInstant(Protocol):
         ...
 
 
-@dataclass(kw_only=True)
+@dataclass(slots=True, kw_only=True)
 class Timestamped(TimestampInstant):
     timestamp: str
     """A timestamp in ISO 8601 format."""
