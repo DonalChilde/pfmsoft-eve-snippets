@@ -1,0 +1,81 @@
+# Zensical Setup
+
+## Steps to setup publishing docs
+
+### 1. Init the project if needed
+
+```bash
+zensical new .
+```
+
+### 2. Edits to zensical.toml
+
+```toml
+[project]
+site_name = "SITE_NAME"
+site_description = "SITE_DESCRIPTION"
+site_authon = "SITE_AUTHOR"
+site_url = "SITE_URL" # site_url = "https://DonalChilde.github.io/pfmsoft-eve-link"
+repo_url = "REPO_URL" # repo_url = "https://github.com/DonalChilde/pfmsoft-eve-link"
+
+# Plugins
+[project.plugins.mkdocstrings.handlers.python]
+inventories = ["https://docs.python.org/3/objects.inv"]
+paths = ["src/pfmsoft"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+docstring_style = "google"
+inherited_members = true
+show_source = true
+annotations_path = "source"
+show_signature_annotations = true
+```
+
+### 3. Add Github Action with uv
+
+publish to github pages
+
+`.github/workflows/docs.yaml`
+
+```yaml
+name: Documentation
+on:
+  push:
+    branches:
+      - master
+      - main
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/configure-pages@v6
+      - uses: actions/checkout@v7
+      - name: Set up uv
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+        with:
+          version: "latest"
+          enable-cache: true
+      - name: Set up Python
+        run: uv python install
+      - run: uv run zensical build --clean
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - uses: actions/deploy-pages@v5
+        id: deployment
+```
+
+### 4. Turn on Github Pages
+
+In Settings-Pages, select source as Github Actions
+
+### 5. Set doc site
+
+In About set website as Github Pages, set display deployments.
